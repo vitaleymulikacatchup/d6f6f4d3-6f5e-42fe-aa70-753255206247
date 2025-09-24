@@ -11,18 +11,16 @@ const interTight = Inter_Tight({
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "Memecoin Landing Page - Fun & Trendy",
-  description: "Bright memecoin landing with playful vibe, simple buy steps, and clear tokenomics.",
+  title: "MemePulse",
+  description: "Launch a simple landing page for a memecoin with clear buy steps, tokenomics, and community vibe.",
   keywords: ["memecoin","crypto","landing","tokenomics","how-to-buy","buy-meme","cryptocurrency","fun","community","roadmap","mascot"],
-  alternates: {
-    canonical: "/"
-  },
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Memecoin Landing Page - Fun & Trendy",
+    title: "Bearer Token Landing Page",
     description: "Bright memecoin landing with playful vibe, simple buy steps, and clear tokenomics.",
     type: "website",
     url: "/",
@@ -31,24 +29,29 @@ export const metadata: Metadata = {
       url: "/images/logo.svg",
       width: 1200,
       height: 630,
-      alt: "Memecoin Landing Page - Fun & Trendy"
+      alt: "MemePulse"
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Memecoin Landing Page - Fun & Trendy",
+    title: "MemePulse",
     description: "Bright memecoin landing with playful vibe, simple buy steps, and clear tokenomics.",
-    images: ["/images/logo.svg"]
+    images: "/images/logo.svg"
   },
   robots: { index: true, follow: true },
+  icons: { icon: "/favicon.ico" }
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{ children: React.ReactNode; }>) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="en">
-      <body className={`${interTight.variable} ${poppins.variable} antialiased`}>{children}</body>
+      <body className={`${interTight.variable} ${poppins.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }
